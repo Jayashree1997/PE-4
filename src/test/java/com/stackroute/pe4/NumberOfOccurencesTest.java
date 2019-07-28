@@ -37,4 +37,11 @@ public class NumberOfOccurencesTest {
         int result=numberOfOccurences.countCharacters(s);
         assertEquals(2,result);
     }
+    @Test
+    public void checkForNullStringReturnZero() {
+
+        int res = numberOfOccurences.countCharacters("");
+        assertEquals(0, res);
+
+    }
 }

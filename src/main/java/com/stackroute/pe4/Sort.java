@@ -1,18 +1,25 @@
 package com.stackroute.pe4;
 
-public class Sort {
-    public String alphabeticalOrder(String s) {
-        char[] charArray = s.toCharArray();
-        for (int i = 0; i < charArray.length; i++) {
-            for (int j = i + 1; j < charArray.length; j++) {
-                if (Character.toLowerCase(charArray[j]) < Character.toLowerCase(charArray[i])) {
-                    char temp = charArray[i];
-                    charArray[i] = charArray[j];
-                    charArray[j] = temp;
-                    return String.valueOf(temp);
-                }
-            }
+import java.util.Arrays;
 
+public class Sort{
+
+    public String sortWords(String paragraph) {
+
+        if(paragraph == "")
+            return null;
+
+        String[] strArr = paragraph.split(" ");   //split string into string array
+
+        String output="";
+        Arrays.sort(strArr, String.CASE_INSENSITIVE_ORDER);    //sort the array
+        for(String a:strArr)    //create a for each loop to loop through the string array
+        {
+            output=output.concat(a).concat(" ");
         }
+
+        return output.trim();   //return the string
+
     }
+
 }
